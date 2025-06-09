@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block title %}Gráfico de la Ausencia | {{ super() }}{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <meta name="description" content="Datos y visualizaciones sobre personas desaparecidas en México">
+    <meta name="keywords" content="desaparecidos, México, estadísticas">
+    
+    <!-- Módulos adicionales de Highcharts -->
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/map.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Encabezado -->
+    <div class="row">
+        <div class="col-md-12 text-center mb-4">
+            <h1 class="titulo-principal">
+                {{ diccionario['titulos']['h1'] }}
+            </h1>
+            <p class="lead subtitulo">
+                {{ diccionario['titulos']['subtitulo'] }}
+            </p>
+            <hr class="my-4 separador">
+        </div>
+    </div>
+
+    <!-- Sección de contexto -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="titulo-seccion">
+                        <i class="fas fa-book-open me-2"></i> {{ diccionario['titulos']['acerca'] }}
+                    </h3>
+                    <p class="mt-3 descripcion">                     
+                       <a href="https://cartografiadelaausencia.lat/index.html" target="_blank"><b>Cartografía de la Ausencia</b></a> es un acto de resistencia que desafía a todas aquellas entidades que buscan desaparecer sistemáticamente las identidades de las personas desaparecidas en México, reduciéndolas a cifras frías y expedientes vacíos.
+                        Este proyecto surge como una extensión del espíritu de <i>Cartografía de la Ausencia</i>, con el objetivo de visibilizar la magnitud de la crisis de desapariciones, transformando datos estadísticos en narrativas visuales que resisten al olvido y a la normalización de la violencia.
+                        Busca generar solidaridad y empatía en la sociedad, concientizando sobre la realidad de las desapariciones forzadas en México y el profundo impacto que tienen en las familias y comunidades afectadas.
+                    </p>
+                        
+                        <b class="mt-3 descripcion">Metodología de Trabajo:</b>
+                        
+                        <ul>
+                            <li class="mt-3 descripcion">Trabajamos con los datos originales de <em>Cartografía de la Ausencia</em> sin alteraciones, respetando su integridad como testimonio. 
+                            La base de datos puede ser consultada en el siguiente <a href = "https://cartografiadelaausencia.lat/descargables.html" target="_blank"> <b>enlace</b>. </a> </li>
+                            <li class="mt-3 descripcion">Utilizamos herramientas tecnológicas para crear visualizaciones que revelan patrones y tendencias que dan voz a las víctimas.</li>
+                        </ul>
+                        
+                        <b class="mt-3 descripcion">Nuestro Compromiso:</b>
+                        
+                        <p class="mt-3 descripcion"> Este proyecto no es análisis por el análisis mismo. Es:</p>
+                        <ul>
+                            <li class="mt-3 descripcion">Un <strong>antídoto contra la normalización</strong> de las desapariciones.</li>
+                            <li class="mt-3 descripcion">Un <strong>espejo para la sociedad</strong> que prefiere no ver.</li>
+                            <li class="mt-3 descripcion">Un <strong>puente</strong> entre el rigor de los datos y el dolor de los ausentes.</li>
+                        </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de gráficos -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h2 class="titulo-graficos">
+                <i class="fas fa-chart-bar me-2"></i> {{ diccionario['descripciones']['dashboard'] }}
+            </h2>
+            <hr class="separador-graficos">
+        </div>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div id="grafico-evolucion" class="highcharts-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div id="grafico-evolucion-municipios" class="highcharts-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div id="grafico-municipios" class="highcharts-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div id="grafico-genero" class="highcharts-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div id="grafico-histograma" class="highcharts-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Verificar que los datos están definidos
+        console.log('Datos para gráfico-evolucion:', {{ grafico_evolucion|tojson|safe }});
+        
+        // Inicializar gráficos
+        try {
+            Highcharts.chart('grafico-evolucion', {{ grafico_evolucion|tojson|safe }});
+            Highcharts.chart('grafico-evolucion-municipios', {{ grafico_evolucion_municipio|tojson|safe }});
+            Highcharts.chart('grafico-municipios', {{ grafico_municipios|tojson|safe }});
+            Highcharts.chart('grafico-genero', {{ grafico_genero|tojson|safe }});
+            Highcharts.chart('grafico-histograma', {{ grafico_histograma|tojson|safe }});
+        } catch (error) {
+            console.error('Error al cargar gráficos:', error);
+        }
+    });
+</script>
+{% endblock %}

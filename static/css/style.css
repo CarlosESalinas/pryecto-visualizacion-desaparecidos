@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+
+/* Variables y Reset */
+:root {    
+    --primary-color: #0E1126;          /* Azul oscuro (navbar, títulos) */
+    --primary-dark: #0D1E40;           /* Azul muy oscuro */
+    --primary-light: #144673;          /* Azul intermedio */
+    --secondary-color: #177DA6;        /* Azul claro (botones, highlights) */
+    --background-primary: #45A9BF;     /* Fondo claro */
+    --text-primary-color: #e1f0f0;     /* Texto claro (navbar) */
+    --text-secondary-color: #aeaeae;   /* Texto gris */
+    --primary-color: #ffffff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* font-family: 'Work Sans', sans-serif; */
+    background-color: var(--primary-color);
+    color: var(--primary-dark);
+    line-height: 1.6;
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Righteous', cursive;
+    color: var(--primary-dark);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color) !important;
+    padding: 1rem 2rem;
+}
+
+.navbar-brand, .nav-link {
+    color: var(--text-primary-color) !important;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    font-family: 'Righteous', cursive;
+    font-size: 1.5rem;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background-color: var(--primary-dark);
+    color: var(--text-primary-color);
+    font-weight: 600;
+    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+    padding: 1rem 1.5rem;
+}
+
+/* Mantén estos estilos en tu CSS */
+.card.shadow-sm {
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-body h3 {
+    color: var(--primary-dark);
+    font-family: 'Righteous', cursive;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-body h3 i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.card-body p {
+    color: var(--primary-light);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Gráficos Highcharts */
+.highcharts-container {
+    width: 100% !important;
+    height: 500px !important;
+    margin: 1rem 0;
+}
+
+.highcharts-title {
+    font-family: 'Righteous', cursive !important;
+    fill: var(--primary-dark) !important;
+}
+
+.highcharts-axis-title, .highcharts-axis-labels {
+    font-family: 'Work Sans', sans-serif !important;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color) !important;
+    color: var(--text-primary-color);
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .highcharts-container {
+        height: 400px !important;
+    }
+    
+    .card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Utilidades */
+.text-center {
+    text-align: center;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+.shadow-sm {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Textos */
+.titulo-principal {
+    color: var(--primary-dark);
+    font-family: 'Righteous', cursive;
+}
+
+.subtitulo {
+    color: var(--primary-light);
+}
+
+.titulo-seccion {
+    color: var(--primary-dark);
+    font-family: 'Righteous', cursive;
+}
+
+.descripcion {
+    color: var(--primary-light);
+    line-height: 1.8;
+}
+
+/* Separadores */
+.separador {
+    border-color: var(--secondary-color);
+}
+
+.separador-graficos {
+    border-color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Contenedores */
+.grafico-container {
+    margin-bottom: 2rem;
+}
+
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
