@@ -85,7 +85,7 @@ Este gráfico muestra un aumento drástico en los casos reportados a partir de 2
 ### 3. Evolución en los 8 municipios más afectados
 Se identifican patrones similares de crecimiento abrupto en los municipios con mayor número de casos. Los municipios más afectados presentan curvas con incrementos particularmente agudos entre 2018 y 2022.
 
-![Evolución por Municipio](static/img/grafico-temporal-municipios.png)
+![Evolución por Municipio](static/img/grafico-temporal-muncipios.png)
 
 **Municipios analizados**:
 - Zapopan
