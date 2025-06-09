@@ -13,7 +13,7 @@ Este proyecto tiene como objetivo visualizar y analizar la evolución de los cas
 ### 1. Evolución general de desapariciones por año
 Este gráfico muestra un aumento drástico en los casos reportados a partir de 2018, alcanzando un pico entre 2021 y 2023. El comportamiento sugiere una escalada sistemática en la crisis de desapariciones en Jalisco.
 
-![Comparación por Municipio](static/img/grafico-temporal.png)
+![Comparación por Municipio](static/img/distribucion-temporal.png)
 
 
 ### 2. Evolución en los 8 municipios más afectados
