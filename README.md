@@ -8,8 +8,6 @@ Este proyecto tiene como objetivo visualizar y analizar la evolución de los cas
 - Gráfico 2: Evolución anual en los 8 municipios más afectados.
 - Gráfico 3: Top 8 municipios con mayor número total de casos.
 
-¡Gracias por recordarlo, Eduardo! Aquí tienes una **descripción clara y profesional de la base de datos** que puedes incluir en tu `README.md` (u otro apartado del proyecto como en la presentación o documentación).
-
 ---
 
 ## 1. Base de Datos
