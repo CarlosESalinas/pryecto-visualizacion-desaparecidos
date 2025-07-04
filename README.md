@@ -137,5 +137,5 @@ El propósito de esta visualización es ofrecer una herramienta accesible que fa
 ---
 
 - **Autor:** Carlos Eduardo  Salinas Díaz
-- **Proyecto:** [Ver Proyecto](https://proyecto-visualizacion-2-glxo.onrender.com )
+- **Proyecto:** [Ver Proyecto](https://proyecto-visualizacion-c9bh.onrender.com)
 - **Contacto:** [LinkedIn](https://www.linkedin.com/in/carlosesalinasdíaz/)
